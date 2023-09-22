@@ -65,7 +65,7 @@ public class DepartmentTable {
     public static List<Department> FindDepartmentByName(String name) {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("DepartmentPU");
         EntityManager em = emf.createEntityManager();
-        Query query = em.createNamedQuery("Employee.findByName");
+        Query query = em.createNamedQuery("Department.findByName");
         query.setParameter("name", name);
         List<Department> depList = (List<Department>) query.getResultList();
         em.close();
